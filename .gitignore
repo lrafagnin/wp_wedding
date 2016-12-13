@@ -1,0 +1,38 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# WordPress
+web/wp
+web/.htaccess
+
+# WP-CLI
+db-sync
+sql-dump-*.sql
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Vendor (e.g. Composer)
+vendor/*
+!vendor/.gitkeep
+
+# Other
+.idea
+node_modules
+bin
+.vagrant
+*.log
+*.lock
+web/app/themes/wpw/.sass-cache
+web/app/themes/wpw/sass/.sass-cache
+
+mysql_data/
+
+!web/app/plugins/wpw

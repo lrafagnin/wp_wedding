@@ -1,0 +1,94 @@
+// info Section
+
+@mixin hover-text {
+  opacity: 1;
+
+  & > h4 {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  & > i {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+section#info, section#infos, section#informacoes {
+  .container {
+    max-width: 900px;
+  }
+  .info-item {
+    padding-bottom: 30px;
+    margin: 0 0 15px;
+    right: 0;
+
+    .hover-bg {
+      overflow: hidden;
+      position: relative;
+      height: 289px;
+      .info-link {
+        display: block;
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .hover-text {
+        position: absolute;
+        text-align: center;
+        margin: 0 auto;
+        color: #c0cbce;
+        background: rgba(3, 46, 58, 0.8);
+        padding: 25% 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.5s;
+        & > h4 {
+          opacity: 0;
+          -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+          transition: all 0.5s;
+          font-size: 30px;
+        }
+        & > i {
+          opacity: 0;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          transition: all 0.5s;
+        }
+      }
+      &:hover {
+        .hover-text {
+          @include hover-text;
+        }
+      }
+    }
+
+    * {
+      z-index: 2;
+    }
+
+  }
+}
+
+@media(min-width: 767px) {
+  section#info, section#infos, section#informacoes {
+    .info-item {
+      margin: 0 0 30px;
+    }
+  }
+}
+
+@media(max-width: 991px) {
+  section#info, section#infos, section#informacoes {
+    .info-item .hover-bg .hover-text {
+      @include hover-text;
+      background: rgba(3, 46, 58, 0.6);
+    }
+  }
+}

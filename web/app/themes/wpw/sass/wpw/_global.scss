@@ -1,0 +1,169 @@
+// Global Components
+
+body {
+  overflow-x: hidden;
+  @include body-font;
+  webkit-tap-highlight-color: $theme-primary;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+  outline: none;
+}
+
+// Highlight Color Customization
+
+::-moz-selection {
+  text-shadow: none;
+  background: $theme-primary;
+}
+
+::selection {
+  text-shadow: none;
+  background: $theme-primary;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+.text-muted {
+  color: $gray-light;
+}
+
+.text-primary {
+  color: $theme-primary;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+p.large {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active,
+a:visited {
+  outline: none;
+}
+
+a, a:visited {
+  color: $theme-primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: darken($theme-primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-font;
+  font-weight: 700;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.bg-lighter-gray {
+  background-color: $gray-lighter;
+}
+
+.bg-light-gray {
+  background-color: $gray-light;
+}
+
+.bg-dark-gray {
+  background-color: $gray-dark;
+}
+
+.bg-darkest-gray {
+  background-color: $gray-darker;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+  @include button-variant(white, $theme-primary, $theme-primary);
+  @include heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  @include button-variant(white, $theme-primary, $theme-primary);
+  @include heading-font;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+// Global Section Styles
+
+section, article {
+  padding: 100px 0;
+  h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  h3.section-subheading {
+    font-size: 16px;
+    @include serif-font;
+    text-transform: none;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 75px;
+  }
+}
+
+@media(min-width: 768px) {
+  section, article {
+    padding: 150px 0;
+  }
+}
+
+// Social Buttons
+
+ul.social-buttons {
+  margin-bottom: 0;
+  li {
+    a {
+      display: block;
+      background-color: $gray-darker;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+      font-size: 20px;
+      line-height: 40px;
+      color: white;
+      outline: none;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $theme-primary;
+      }
+    }
+  }
+}
+
+sup {
+  text-transform: lowercase !important;
+}
