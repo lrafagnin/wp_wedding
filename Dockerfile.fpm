@@ -9,10 +9,6 @@ ADD . /var/www/html
 ADD ./php-fpm/php-ini-overrides.ini /etc/php/7.0/fpm/conf.d/99-overrides.ini
 
 WORKDIR "/var/www/html"
-
-# Install composer dependencies
-RUN composer update
-
 VOLUME ["/var/www/html/web/app/uploads"]
 
 EXPOSE 9000
