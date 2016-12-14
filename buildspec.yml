@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - apt-get update && apt-get install -y curl php5-cli git
+      - apt-get update && apt-get install -y curl php7-cli git
       - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
       - composer update
       - echo Building the Docker image...
