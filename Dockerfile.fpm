@@ -13,8 +13,6 @@ WORKDIR "/var/www/html"
 # Install composer dependencies
 RUN composer update
 
-# TODO: Run SASS
-
 VOLUME ["/var/www/html/web/app/uploads"]
 
 EXPOSE 9000
