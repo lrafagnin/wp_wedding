@@ -33,8 +33,8 @@ php-fpm:
     LOGGED_IN_SALT: ':>J+vCpy$$)VSjCMaNTs&-dLVuWwvC|Y7*Cy9M[r8h,{!MLdch&dmb9[Py]eooVi}'
     NONCE_SALT: 'T*OQ;Z0;0$$Q.-L;uop`oh4Q9o0,9Ez85fU4rfZ:ZTuCjy4Ah$$MhYDdv,ReBwI@x:'
     DISABLE_WP_CRON: "true"
-  extra_hosts:
-    - mysqlhost:192.168.2.76
+  #extra_hosts:
+  #  - mysqlhost:192.168.2.76
   links:
     - mysql
 
