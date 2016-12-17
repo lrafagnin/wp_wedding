@@ -3,17 +3,18 @@ version: 0.1
 phases:
   pre_build:
     commands:
+      - echo Installing dependencies...
+      - add-apt-repository ppa:ondrej/php
+      - apt-get update
+      - apt-get install -y curl wget git subversion unzip php7.0 php7.0-cli
+      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
   build:
     commands:
       - echo Build started on `date`
-      - apt-add-repository ppa:ondrej/php
-      - apt-get update
-      - apt-get install -y curl wget git subversion unzip php7.0 php7.0-cli
-      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
       - composer install
-      - echo Building the Docker image...
+      - echo Building the Docker images...
       - docker build -t $IMAGE_REPO_NAME-fpm -f Dockerfile.fpm .
       - docker tag $IMAGE_REPO_NAME-fpm:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME-fpm:$IMAGE_TAG
       - docker build -t $IMAGE_REPO_NAME-nginx -f Dockerfile.nginx .
@@ -21,6 +22,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
+      - echo Pushing the Docker images...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME-fpm:$IMAGE_TAG
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME-nginx:$IMAGE_TAG
