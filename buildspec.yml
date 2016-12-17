@@ -6,7 +6,7 @@ phases:
       - echo Installing dependencies...
       - apt-get update -y && apt-get install -y python-software-properties software-properties-common
       - LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
-      - apt-get update -y && apt-get install -y curl wget git subversion unzip php7.0 php7.0-cli
+      - apt-get update -y && apt-get install -y curl wget git subversion unzip php7.0 php7.0-cli php7.0-xml
       - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
