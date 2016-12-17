@@ -8,6 +8,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - apt-add-repository ppa:ondrej/php
       - apt-get update
       - apt-get install -y curl wget git subversion unzip php7.0 php7.0-cli
       - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
