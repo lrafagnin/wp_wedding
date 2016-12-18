@@ -75,6 +75,8 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
 define('WP_AUTO_UPDATE_CORE', false);
+define('DBI_AWS_ACCESS_KEY_ID', env('AWS_ACCESS_KEY_ID'));
+define('DBI_AWS_SECRET_ACCESS_KEY', env('AWS_SECRET_ACCESS_KEY'));
 
 /**
  * Bootstrap WordPress

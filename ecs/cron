@@ -1,0 +1,2 @@
+00 00 * * * sudo aws s3 sync . s3://content.rafagnin.com/wp_uploads/
+*/10 * * * * wget -q -O - http://rafagnin.com/wp-cron.php?doing_wp_cron >/dev/null 2>&1

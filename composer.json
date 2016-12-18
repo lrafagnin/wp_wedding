@@ -40,7 +40,14 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/polylang": "*",
-    "wpackagist-plugin/lingotek-translation": "*"
+    "wpackagist-plugin/lingotek-translation": "*",
+    "wpackagist-plugin/amazon-web-services": "*",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
+    "wpackagist-plugin/wp-mail-smtp": "*",
+    "wpackagist-plugin/wp-crontrol": "*",
+    "wpackagist-plugin/wordfence": "*",
+    "wpackagist-plugin/google-analytics-for-wordpress": "*",
+    "wpackagist-plugin/backwpup": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

@@ -30,6 +30,7 @@ bin
 .vagrant
 *.log
 *.lock
+docker-compose.yml
 web/app/themes/wpw/.sass-cache
 web/app/themes/wpw/sass/.sass-cache
 
