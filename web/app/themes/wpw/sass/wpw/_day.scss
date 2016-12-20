@@ -136,18 +136,23 @@ section#dday, section#diad, section#jourj {
 
       > li:nth-child(1) {
         & > .timeline-panel {
-          margin-top: 15px;
-          margin-bottom: 50px;
+          margin-top: 30px;
+          margin-bottom: 30px;
         }
       }
       > li:nth-child(2) {
         & > .timeline-panel {
-          margin-top: -30px;
+          margin-top: -10px;
         }
       }
       > li:nth-child(3) {
         & > .timeline-panel {
-          margin-top: -30px;
+          margin-top: 0px;
+        }
+      }
+      > li:nth-child(4) {
+        & > .timeline-panel {
+          margin-top: 30px;
         }
       }
     }
@@ -219,9 +224,10 @@ section#dday, section#diad, section#jourj {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   section#dday, section#diad, section#jourj {
     .timeline {
-      > li:nth-child(4) {
+      > li {
         & > .timeline-panel {
-          margin-top: -60px;
+          margin-top: 0px;
+          margin-bottom: 0px;
         }
       }
     }

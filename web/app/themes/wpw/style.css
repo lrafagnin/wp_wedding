@@ -264,7 +264,7 @@ nav.navbar-custom {
     float: right; }
     nav.navbar-custom .navbar-lang button {
       margin-right: 15px;
-      padding: 9px; }
+      padding: 9px 10px; }
   nav.navbar-custom .nav li a {
     font-family: "Prohibition Round", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     text-transform: uppercase;
@@ -314,6 +314,14 @@ nav.navbar-custom {
     padding: 10px 0; }
     nav.navbar-custom.affix .navbar-brand {
       font-size: 2em; } }
+@media (max-width: 400px) {
+  .navbar-toggle {
+    margin-right: 5px; }
+
+  nav.navbar-custom .navbar-brand {
+    padding: 25px 15px; }
+  nav.navbar-custom .navbar-lang button {
+    margin-right: 5px; } }
 header {
   background-image: url("../img/header-bg.jpg");
   background-repeat: no-repeat;
@@ -475,12 +483,14 @@ section#dday .timeline, section#diad .timeline, section#jourj .timeline {
       text-align: left;
       padding: 0 30px 20px 20px; }
   section#dday .timeline > li:nth-child(1) > .timeline-panel, section#diad .timeline > li:nth-child(1) > .timeline-panel, section#jourj .timeline > li:nth-child(1) > .timeline-panel {
-    margin-top: 15px;
-    margin-bottom: 50px; }
+    margin-top: 30px;
+    margin-bottom: 30px; }
   section#dday .timeline > li:nth-child(2) > .timeline-panel, section#diad .timeline > li:nth-child(2) > .timeline-panel, section#jourj .timeline > li:nth-child(2) > .timeline-panel {
-    margin-top: -30px; }
+    margin-top: -10px; }
   section#dday .timeline > li:nth-child(3) > .timeline-panel, section#diad .timeline > li:nth-child(3) > .timeline-panel, section#jourj .timeline > li:nth-child(3) > .timeline-panel {
-    margin-top: -30px; } }
+    margin-top: 0px; }
+  section#dday .timeline > li:nth-child(4) > .timeline-panel, section#diad .timeline > li:nth-child(4) > .timeline-panel, section#jourj .timeline > li:nth-child(4) > .timeline-panel {
+    margin-top: 30px; } }
 @media (min-width: 992px) {
   section#dday .timeline > li, section#diad .timeline > li, section#jourj .timeline > li {
     min-height: 150px; }
@@ -513,8 +523,9 @@ section#dday .timeline, section#diad .timeline, section#jourj .timeline {
   section#dday .timeline > li:nth-child(4) > .timeline-panel, section#diad .timeline > li:nth-child(4) > .timeline-panel, section#jourj .timeline > li:nth-child(4) > .timeline-panel {
     margin-top: -15px; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  section#dday .timeline > li:nth-child(4) > .timeline-panel, section#diad .timeline > li:nth-child(4) > .timeline-panel, section#jourj .timeline > li:nth-child(4) > .timeline-panel {
-    margin-top: -60px; } }
+  section#dday .timeline > li > .timeline-panel, section#diad .timeline > li > .timeline-panel, section#jourj .timeline > li > .timeline-panel {
+    margin-top: 0px;
+    margin-bottom: 0px; } }
 section.category-around div#venueModal div.map {
   height: 500px; }
 

@@ -35,5 +35,5 @@ web/app/themes/wpw/.sass-cache
 web/app/themes/wpw/sass/.sass-cache
 
 mysql_data/
-
+web/app/wflogs
 !web/app/plugins/wpw
