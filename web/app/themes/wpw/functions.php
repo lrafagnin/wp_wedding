@@ -116,7 +116,7 @@ function wpw_scripts()
 
 	wp_enqueue_style('wpw-style', get_stylesheet_uri());
 
-	//wp_enqueue_script('wpw-jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
+	wp_enqueue_script('wpw-jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
 	wp_enqueue_script('wpw-jqueryui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
 	wp_enqueue_script('wpw-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 	wp_enqueue_script('wpw-fontawesome', 'https://use.fontawesome.com/5e3322d959.js');
