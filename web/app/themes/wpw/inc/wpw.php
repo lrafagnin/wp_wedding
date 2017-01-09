@@ -59,7 +59,7 @@ if (is_plugin_active('polylang/polylang.php')) {
 
 		$output = '';
 		$output .= '<div class="btn-group dropdown" role="group">
-    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-lang dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img src="' . $current['flag'] . '" alt="' . $current['slug'] . '">
       <span class="caret"></span>
     </button>
@@ -81,3 +81,10 @@ function wpw_menu_item($items, $args)
 	}
 	return $items;
 }
+
+function rsvp_form($lang = 'en') {
+	ob_start();
+    get_template_part('template-parts/rsvp_form');
+    return ob_get_clean();
+}
+add_shortcode('rsvp', 'rsvp_form');

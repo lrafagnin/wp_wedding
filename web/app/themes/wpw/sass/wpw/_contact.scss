@@ -1,28 +1,51 @@
 // Contact Section
 
+::-webkit-input-placeholder {
+   color: $gray-light !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: $gray-light !important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $gray-light !important;
+}
+:-ms-input-placeholder {
+   color: $gray-light !important;
+}
+
 section#contact, section#contato, section#rsvp{
   background-color: $gray-darker;
   background-position: center;
   background-repeat: no-repeat;
-  .section-heading {
-    color: white;
+  .section-heading, label, h5 {
+    color: #fff;
   }
-  .form-group {
+  .form-group, .bootstrap-select {
     margin-bottom: 25px;
+    width: 100%;
     input,
-    textarea {
+    textarea,
+    button {
       padding: 20px;
     }
-    input.form-control {
+    .form-control, button.dropdown-toggle {
+        @include heading-font;
+        background-color: $gray-darker;
+        color: #fff;
+    }
+    input.form-control, select.selectpicker {
       height: auto;
     }
     textarea.form-control {
-      height: 236px;
+      height: 149px;
     }
   }
   .form-control:focus {
     border-color: $theme-primary;
     box-shadow: none;
+  }
+  button.bs-invalid {
+      border-color: $theme-danger !important;
   }
   ::-webkit-input-placeholder {
     @include heading-font;
@@ -46,5 +69,8 @@ section#contact, section#contato, section#rsvp{
   }
   .text-danger {
     color: $theme-danger;
+  }
+  div#formSuccess h3 {
+      color: $theme-primary;
   }
 }

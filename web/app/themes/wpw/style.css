@@ -307,13 +307,14 @@ nav.navbar-custom {
       -moz-transition: all 0.3s;
       transition: all 0.3s; }
     nav.navbar-custom .navbar-nav > .active > a {
-      border-radius: 3px; } }
-@media (min-width: 768px) {
-  nav.navbar-custom.affix {
-    background-color: #222222;
-    padding: 10px 0; }
-    nav.navbar-custom.affix .navbar-brand {
-      font-size: 2em; } }
+      border-radius: 3px; }
+    nav.navbar-custom .btn-lang {
+      margin-left: 10px !important; }
+    nav.navbar-custom.affix {
+      background-color: #222222;
+      padding: 10px 0; }
+      nav.navbar-custom.affix .navbar-brand {
+        font-size: 2em; } }
 @media (max-width: 400px) {
   .navbar-toggle {
     margin-right: 5px; }
@@ -607,26 +608,58 @@ section#map, section#mapa, section#carte {
     margin: 15px 0;
     text-transform: none; }
 
+::-webkit-input-placeholder {
+  color: #777777 !important; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777777 !important; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777777 !important; }
+
+:-ms-input-placeholder {
+  color: #777777 !important; }
+
 section#contact, section#contato, section#rsvp {
   background-color: #222222;
   background-position: center;
   background-repeat: no-repeat; }
-  section#contact .section-heading, section#contato .section-heading, section#rsvp .section-heading {
-    color: white; }
-  section#contact .form-group, section#contato .form-group, section#rsvp .form-group {
-    margin-bottom: 25px; }
+  section#contact .section-heading, section#contact label, section#contact h5, section#contato .section-heading, section#contato label, section#contato h5, section#rsvp .section-heading, section#rsvp label, section#rsvp h5 {
+    color: #fff; }
+  section#contact .form-group, section#contact .bootstrap-select, section#contato .form-group, section#contato .bootstrap-select, section#rsvp .form-group, section#rsvp .bootstrap-select {
+    margin-bottom: 25px;
+    width: 100%; }
     section#contact .form-group input,
-    section#contact .form-group textarea, section#contato .form-group input,
-    section#contato .form-group textarea, section#rsvp .form-group input,
-    section#rsvp .form-group textarea {
+    section#contact .form-group textarea,
+    section#contact .form-group button, section#contact .bootstrap-select input,
+    section#contact .bootstrap-select textarea,
+    section#contact .bootstrap-select button, section#contato .form-group input,
+    section#contato .form-group textarea,
+    section#contato .form-group button, section#contato .bootstrap-select input,
+    section#contato .bootstrap-select textarea,
+    section#contato .bootstrap-select button, section#rsvp .form-group input,
+    section#rsvp .form-group textarea,
+    section#rsvp .form-group button, section#rsvp .bootstrap-select input,
+    section#rsvp .bootstrap-select textarea,
+    section#rsvp .bootstrap-select button {
       padding: 20px; }
-    section#contact .form-group input.form-control, section#contato .form-group input.form-control, section#rsvp .form-group input.form-control {
+    section#contact .form-group .form-control, section#contact .form-group button.dropdown-toggle, section#contact .bootstrap-select .form-control, section#contact .bootstrap-select button.dropdown-toggle, section#contato .form-group .form-control, section#contato .form-group button.dropdown-toggle, section#contato .bootstrap-select .form-control, section#contato .bootstrap-select button.dropdown-toggle, section#rsvp .form-group .form-control, section#rsvp .form-group button.dropdown-toggle, section#rsvp .bootstrap-select .form-control, section#rsvp .bootstrap-select button.dropdown-toggle {
+      font-family: "Prohibition Round", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background-color: #222222;
+      color: #fff; }
+    section#contact .form-group input.form-control, section#contact .form-group select.selectpicker, section#contact .bootstrap-select input.form-control, section#contact .bootstrap-select select.selectpicker, section#contato .form-group input.form-control, section#contato .form-group select.selectpicker, section#contato .bootstrap-select input.form-control, section#contato .bootstrap-select select.selectpicker, section#rsvp .form-group input.form-control, section#rsvp .form-group select.selectpicker, section#rsvp .bootstrap-select input.form-control, section#rsvp .bootstrap-select select.selectpicker {
       height: auto; }
-    section#contact .form-group textarea.form-control, section#contato .form-group textarea.form-control, section#rsvp .form-group textarea.form-control {
-      height: 236px; }
+    section#contact .form-group textarea.form-control, section#contact .bootstrap-select textarea.form-control, section#contato .form-group textarea.form-control, section#contato .bootstrap-select textarea.form-control, section#rsvp .form-group textarea.form-control, section#rsvp .bootstrap-select textarea.form-control {
+      height: 149px; }
   section#contact .form-control:focus, section#contato .form-control:focus, section#rsvp .form-control:focus {
     border-color: #8fd6c6;
     box-shadow: none; }
+  section#contact button.bs-invalid, section#contato button.bs-invalid, section#rsvp button.bs-invalid {
+    border-color: #a94442 !important; }
   section#contact ::-webkit-input-placeholder, section#contato ::-webkit-input-placeholder, section#rsvp ::-webkit-input-placeholder {
     font-family: "Prohibition Round", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     text-transform: uppercase;
@@ -654,7 +687,9 @@ section#contact, section#contato, section#rsvp {
     font-weight: 700;
     color: #eeeeee; }
   section#contact .text-danger, section#contato .text-danger, section#rsvp .text-danger {
-    color: #e74c3c; }
+    color: #a94442; }
+  section#contact div#formSuccess h3, section#contato div#formSuccess h3, section#rsvp div#formSuccess h3 {
+    color: #8fd6c6; }
 
 footer {
   padding: 25px 0;

@@ -7,22 +7,17 @@
  * @package wpw
  */
 
+$classes = get_post_meta(get_the_ID(), 'cssClass', true);
+$style = '';
+if ($thumb = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'full'))
+	$style .= "background-image: url('" . $thumb['0'] . "');";
 ?>
 
-<article id="<?php echo get_post_field('post_name', get_post()) ?>" <?php
-post_class(get_post_meta(get_the_ID(), 'cssClass', true));
-if ($thumb = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'full')):
-?>style="background-image: url('<?php echo $thumb['0'] ?>');"<?php endif; ?>>
+<section id="<?php echo get_post_field('post_name', get_post()) ?>" <?php post_class($classes); ?> style="<?php echo $style ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading"><?php
-					if (is_single()) :
-						echo get_the_title();
-					else:
-						echo '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . get_the_title() . '</a>';
-					endif;
-					?></h2>
+				<h2 class="section-heading"><?php echo get_the_title(); ?></h2>
 				<?php if ($subheader = get_post_meta(get_the_ID(), 'subheader', true)): ?>
 					<h3 class="section-subheading text-muted"><?php echo $subheader; ?></h3>
 				<?php endif; ?>
@@ -30,4 +25,4 @@ if ($thumb = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'full')):
 		</div>
 		<?php the_content(); ?>
 	</div>
-</article>
+</section>

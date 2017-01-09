@@ -21,6 +21,12 @@
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
+    }).on('touchmove', function(e){
+        if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
+    }).on('shown.bs.modal', function(){
+        $(this).addClass('scroll-disable');
+    }).on('hidden.bs.modal', function(){
+        $(this).removeClass('scroll-disable');
     });
 
     // Closes the Responsive Menu on Menu Item Click
@@ -64,4 +70,7 @@
         return false;
     });
 
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        $('.selectpicker').selectpicker('mobile');
+    }
 })(jQuery); // End of use strict

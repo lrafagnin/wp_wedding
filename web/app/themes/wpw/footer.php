@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-md-4">
 				<ul class="list-inline quicklinks">
-					<li><a href="#page-top" class="page-scroll" data-localize="footer.top">Top</a></li>
+					<li><a href="#page-top" class="page-scroll">Top</a></li>
 				</ul>
 			</div>
 		</div>

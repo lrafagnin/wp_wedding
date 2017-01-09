@@ -92,17 +92,15 @@ nav.navbar-custom {
     .navbar-nav > .active > a {
       border-radius: 3px;
     }
-  }
-}
-
-// Navbar Change on Scroll
-
-@media(min-width: 768px) {
-  nav.navbar-custom.affix {
-    background-color: $gray-darker;
-    padding: 10px 0;
-    .navbar-brand {
-      font-size: 2em;
+    .btn-lang {
+        margin-left: 10px !important;
+    }
+    &.affix {
+        background-color: $gray-darker;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 2em;
+        }
     }
   }
 }
