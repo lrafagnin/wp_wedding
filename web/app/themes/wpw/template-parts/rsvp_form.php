@@ -11,10 +11,10 @@
         <h5><?php pll_e('Your details');?></h5>
         <div class="row">
             <div class="col-md-4">
-                <div class="form-group"><input name="guest[]" class="form-control" type="text" placeholder="<?php pll_e('Full name')?> *" required></div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group"><input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>"></div>
+                <div class="input-group">
+                    <span class="input-group-addon btn btn-primary addGuest" alt="<?php pll_e('Add guest');?>"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                    <input name="guest[]" class="form-control" type="text" placeholder="<?php pll_e('Full name')?> *" required>
+                </div>
             </div>
             <div class="col-md-4">
                 <select name="event[]" class="selectpicker" required>
@@ -24,9 +24,13 @@
                     <option value="apologies"><?php pll_e('Apologies, I will not be able to attend');?></option>
                 </select>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>">
+                </div>
+            </div>
         </div>
         <div id="guestsTable"></div>
-        <p><a class="btn btn-primary" href="#" id="addGuestLink"><?php pll_e('Add guest');?></a></p>
     </div>
     <div class="col-md-6">
         <div class="form-group">
@@ -51,13 +55,12 @@
 <div id="formSuccess"><h3 class="text-center"></h3></div>
 
 <script id="guestRow" type="text/template">
-<h5><?php pll_e('Guest details');?></h5>
 <div class="row">
     <div class="col-md-4">
-        <div class="form-group"><input name="guest[]" required class="form-control" type="text" placeholder="<?php pll_e('Guest name')?> *"></div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group"><input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>"></div>
+        <div class="input-group">
+            <span class="input-group-addon btn btn-danger bs-invalid removeGuest" alt="<?php pll_e('Remove guest');?>"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <input name="guest[]" required class="form-control" type="text" placeholder="<?php pll_e('Guest name')?> *">
+        </div>
     </div>
     <div class="col-md-4">
         <select name="event[]" class="selectpicker" required>
@@ -66,6 +69,9 @@
             <option value="reception"><?php pll_e('Reception');?></option>
             <option value="apologies"><?php pll_e('Apologies, I will not be able to attend');?></option>
         </select>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group"><input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>"></div>
     </div>
 </div>
 </script>
@@ -77,10 +83,13 @@
     var guestTable = $('div#guestsTable');
     var $form = $('form#contactForm');
 
-    $('a#addGuestLink').on('click', function(e) {
-        e.preventDefault();
-        guestTable.append($('script#guestRow').html()).find('select:last').selectpicker('refresh');
+    $('.addGuest').on('click', function(e) {
+        guestTable.append($('script#guestRow').html())
+            .find('select:last').selectpicker('refresh');
         $form.validator('update');
+    });
+    $('div#guestsTable').on('click', 'span.removeGuest', function(e) {
+        $(this).closest('div.row').remove();
     });
 
     $.fn.serializeObject = function() {
@@ -113,12 +122,12 @@
                 data: $form.serialize(),
                 success: function(data, text) {
                     $form.slideUp( "slow", function() {
-                        $('div#formSuccess').find('h3').html('<?php pll_e('Thank you for confirmation. We are super excited to see you there!')?>');
+                        $('div#formSuccess').find('h3').html("<?php pll_e('Thank you for confirmation. We are super excited to see you there!')?>");
                     });
                 },
                 error: function(request, status, error) {
                     $form.find('button').attr('disabled', false);
-                    $('div#formError').hide().html('<?php pll_e('An error occured. Please try again.')?>').slideDown().delay(2000).slideUp();
+                    $('div#formError').hide().html("<?php pll_e('An error occured. Please try again.')?>").slideDown().delay(2000).slideUp();
                 }
             });
         }

@@ -20,7 +20,7 @@ section#contact, section#contato, section#rsvp{
   .section-heading, label, h5 {
     color: #fff;
   }
-  .form-group, .bootstrap-select {
+  .form-group, .input-group, .bootstrap-select {
     margin-bottom: 25px;
     width: 100%;
     input,
@@ -43,9 +43,6 @@ section#contact, section#contato, section#rsvp{
   .form-control:focus {
     border-color: $theme-primary;
     box-shadow: none;
-  }
-  button.bs-invalid {
-      border-color: $theme-danger !important;
   }
   ::-webkit-input-placeholder {
     @include heading-font;
@@ -72,5 +69,13 @@ section#contact, section#contato, section#rsvp{
   }
   div#formSuccess h3 {
       color: $theme-primary;
+  }
+  span.bs-invalid {
+      color: #fff;
+      background-color: #d9534f;
+      border-color: #d43f3a;
+    &:hover {
+        background-color: darken(#d43f3a, 0.2);
+    }
   }
 }

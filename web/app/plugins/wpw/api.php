@@ -30,21 +30,19 @@ class WPW_REST_Controller {
             $message .= "
 Guest {$guest}: {$guests[$count]}
 Diet: {$diets[$count]}
-Event: {$events[$count]}
-";
+Event: {$events[$count]}\n";
             $count++;
         }
 
         $message .= "
 Email: {$_REQUEST['email']}
-Phone: {$_REQUEST['phone']}";
+Phone: {$_REQUEST['phone']}
+Message: {$_REQUEST['message']}";
 
         $headers = '';
         $attachments = array();
 
-        wp_mail(array('lucas@rafagnin.com',
-        //'geraldine.menier@gmail.com'
-        ), 'RSVP', $message, $headers, $attachments);
+        wp_mail(get_option('admin_email'), 'RSVP', $message, $headers, $attachments);
 
         //$request->data = $message;
         $response = new WP_REST_Response($request);
