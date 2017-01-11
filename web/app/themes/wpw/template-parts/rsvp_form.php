@@ -11,8 +11,7 @@
         <h5><?php pll_e('Your details');?></h5>
         <div class="row">
             <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-addon btn btn-primary addGuest" alt="<?php pll_e('Add guest');?>"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                <div class="form-group">
                     <input name="guest[]" class="form-control" type="text" placeholder="<?php pll_e('Full name')?> *" required>
                 </div>
             </div>
@@ -31,6 +30,13 @@
             </div>
         </div>
         <div id="guestsTable"></div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-8">
+                <div class="form-group text-right">
+                    <button type="button" class="btn btn-primary btn-block addGuest"><i class="fa fa-plus" aria-hidden="true"></i> <?php pll_e('Add guest');?></button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
@@ -48,7 +54,7 @@
     <div class="clearfix"></div>
     <div class="col-lg-12 text-center">
         <div id="formError" class="help-block text-danger"></div>
-        <button class="btn btn-xl" type="submit"><?php pll_e('Send confirmation')?></button>
+        <button type="submit" class="btn btn-xl" type="submit"><?php pll_e('Send confirmation')?></button>
     </div>
 </div>
 </form>
@@ -56,10 +62,13 @@
 
 <script id="guestRow" type="text/template">
 <div class="row">
+    <div class="col-lg-12 hidden-md hidden-lg">
+        <h5><?php pll_e('Guest details');?></h5>
+    </div>
     <div class="col-md-4">
         <div class="input-group">
-            <span class="input-group-addon btn btn-danger bs-invalid removeGuest" alt="<?php pll_e('Remove guest');?>"><i class="fa fa-times" aria-hidden="true"></i></span>
             <input name="guest[]" required class="form-control" type="text" placeholder="<?php pll_e('Guest name')?> *">
+            <span class="input-group-addon btn btn-danger bs-invalid hidden-md hidden-lg removeGuest" alt="<?php pll_e('Remove guest');?>"><i class="fa fa-times" aria-hidden="true"></i></span>
         </div>
     </div>
     <div class="col-md-4">
@@ -71,7 +80,10 @@
         </select>
     </div>
     <div class="col-md-4">
-        <div class="form-group"><input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>"></div>
+        <div class="input-group">
+            <input name="diet[]" class="form-control" type="text" placeholder="<?php pll_e('Special dietary')?>">
+            <span class="input-group-addon btn btn-danger bs-invalid hidden-xs hidden-sm removeGuest" alt="<?php pll_e('Remove guest');?>"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </div>
     </div>
 </div>
 </script>
@@ -90,6 +102,7 @@
     });
     $('div#guestsTable').on('click', 'span.removeGuest', function(e) {
         $(this).closest('div.row').remove();
+        $form.validator('update');
     });
 
     $.fn.serializeObject = function() {
