@@ -2,6 +2,10 @@ div#inviteModal img {
   border: 1px solid #000;
 }
 
+.modal {
+    -webkit-overflow-scrolling: auto !important;
+}
+
 .info-modal {
   .modal-dialog {
     margin: 0;
