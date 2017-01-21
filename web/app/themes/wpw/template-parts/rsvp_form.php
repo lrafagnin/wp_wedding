@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <textarea name="message" class="form-control" required rows="6" placeholder="<?php pll_e('Your message')?> *"></textarea>
+            <textarea name="message" class="form-control" rows="6" placeholder="<?php pll_e('Your message')?> *"></textarea>
         </div>
     </div>
     <div class="clearfix"></div>

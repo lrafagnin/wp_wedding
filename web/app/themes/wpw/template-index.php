@@ -17,7 +17,7 @@ get_header(); ?>
 					'posts_per_page' => -1,
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
-					'category__not_in' => array(38, 40, 42)
+					'category__in' => array(18, 75, 77)
 			));
 			foreach ($myposts as $post) : setup_postdata($post);
 				get_template_part('template-parts/content', get_post_format());

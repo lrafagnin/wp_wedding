@@ -1,2 +1,2 @@
 #!/bin/bash
-sass --watch sass:.
+sass --watch sass:. --style compressed
