@@ -34,7 +34,6 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/polylang": "*",
-    "wpackagist-plugin/lingotek-translation": "*",
     "wpackagist-plugin/amazon-web-services": "*",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
     "wpackagist-plugin/wp-mail-smtp": "*",
