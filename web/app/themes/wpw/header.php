@@ -45,7 +45,10 @@
 	<!-- Header -->
 	<header style="background-image: url('<?php header_image(); ?>');">
 		<div class="container">
-			<?php $header = get_content_by_slug('header'); echo $header->post_content; ?>
+			<?php
+				$header = get_content_by_slug('header');
+				echo apply_filters('the_content', $header->post_content);
+			?>
 		</div>
 	</header>
 

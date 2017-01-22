@@ -56,20 +56,4 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 //@import "site/site";
 //@import "modules/infinite-scroll";
 //@import "media/media";
-
-//CUSTOM
-@import "wpw/variables";
-@import "wpw/fonts";
-@import "wpw/mixins";
-@import "wpw/global";
-
-@import "wpw/navbar";
-@import "wpw/header";
-@import "wpw/about";
-@import "wpw/day";
-@import "wpw/around";
-@import "wpw/info";
-@import "wpw/location";
-@import "wpw/contact";
-@import "wpw/footer";
-@import "wpw/modals";
+@import "wpw/wpw-master";

@@ -15,6 +15,7 @@ header {
       font-size: 30px;
       line-height: 22px;
       margin-bottom: 25px;
+      text-shadow: 1px 1px #999;
     }
     .intro-heading {
       @include heading-font;
@@ -22,6 +23,7 @@ header {
       font-size: 50px;
       line-height: 50px;
       margin-bottom: 25px;
+      text-shadow: 1px 1px #999;
     }
   }
 }

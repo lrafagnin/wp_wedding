@@ -82,7 +82,7 @@ function wpw_menu_item($items, $args)
 	return $items;
 }
 
-function wpw_rsvp_form($lang = 'en') {
+function wpw_rsvp_form() {
 	ob_start();
     get_template_part('template-parts/rsvp_form');
     return ob_get_clean();
@@ -108,9 +108,23 @@ function wpw_register_strings() {
 	   "Send confirmation",
        "Thank you for confirmation. We are super excited to see you there!",
        "An error occured. Please try again.",
+	   "Days", "Hours", "Minutes", "Seconds",
    );
    foreach ($form as $item) {
 	   pll_register_string('wpw', $item, 'form', false);
    }
 }
 add_action('admin_init', 'wpw_register_strings');
+
+function wpw_countdown($attributes = [], $content = null, $tag = '')
+{
+    $attributes = array_change_key_case((array)$attributes, CASE_LOWER);
+	$attributes = shortcode_atts([
+	    	'date' => strtotime('+1 day'),
+    	], $attributes, $tag);
+
+	ob_start();
+    include(locate_template('template-parts/countdown.php'));
+	return ob_get_clean();
+}
+add_shortcode('countdown', 'wpw_countdown');

@@ -44,6 +44,9 @@ section#contact, section#contato, section#rsvp{
     border-color: $theme-primary;
     box-shadow: none;
   }
+  .form-group.has-error input {
+    border-color: #a94442 !important;
+  }
   ::-webkit-input-placeholder {
     @include heading-font;
     font-weight: 700;
