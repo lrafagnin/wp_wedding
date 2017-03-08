@@ -9,6 +9,9 @@
  * @package wpw
  */
 
+ $cat = get_the_category();
+ $show_header = !isset($cat) || !isset($cat[0]) || $cat[0]->name != "Modal";
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,14 +25,14 @@
 <body id="page-top" <?php body_class('index'); ?>>
 
 <div id="page" class="site">
-	<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+	<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" <?php if (!$show_header) echo ' style="background-color: #222;"'; ?>>
 		<div class="container">
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-mobile">
 					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 				</button>
 				<div class="nav navbar-lang visible-xs"><?php echo wpw_lang() ?></div>
-				<a class="navbar-brand page-scroll" href="#page-top"><?php bloginfo('name'); ?></a>
+				<a class="navbar-brand page-scroll" href="<?php echo pll_home_url()?>"><?php bloginfo('name'); ?></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbar-mobile">
@@ -43,6 +46,7 @@
 	</nav>
 
 	<!-- Header -->
+	<?php if ($show_header): ?>
 	<header style="background-image: url('<?php header_image(); ?>');">
 		<div class="container">
 			<?php
@@ -51,5 +55,6 @@
 			?>
 		</div>
 	</header>
+	<?php endif; ?>
 
 	<div id="content" class="site-content">

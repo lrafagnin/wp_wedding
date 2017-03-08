@@ -8,7 +8,7 @@
         var $link = $(href);
 
         if (!$link.offset()) {
-            window.location.href = '../home/' + href;
+            window.location.href = '/' + href;
         } else {
             $('html, body').stop().animate({
                 scrollTop: ($link.offset().top - 50)

@@ -42,7 +42,8 @@
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
     "wpackagist-plugin/backwpup": "*",
     "wpackagist-plugin/ssl-insecure-content-fixer": "*",
-    "wpackagist-plugin/cloudflare": "*"
+    "wpackagist-plugin/cloudflare": "*",
+    "wpackagist-plugin/flickr-justified-gallery": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
