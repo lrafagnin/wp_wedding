@@ -23,6 +23,7 @@
 				<ul class="list-inline social-buttons">
 					<li><a href="https://www.facebook.com/lrafagnin" target="_blank"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="https://au.linkedin.com/in/rafagnin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+					<li><?php echo do_shortcode("[adot-seal]"); ?></li>
 				</ul>
 			</div>
 			<div class="col-md-4">
